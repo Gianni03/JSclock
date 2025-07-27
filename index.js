@@ -6,7 +6,7 @@ const toggleSeconds = document.getElementById('toggle-seconds');
 const toggleMinutes = document.getElementById('toggle-minutes');
 const toggleHours = document.getElementById('toggle-hours');
 
-function updateClock() {
+function setDate() {
   const now = new Date();
   const seconds = now.getSeconds();
   const milliseconds = now.getMilliseconds();
@@ -49,7 +49,7 @@ function updateClock() {
   }
   hourHand.style.transform = `rotate(${hourDegrees}deg)`;
 
-  requestAnimationFrame(updateClock);
+  requestAnimationFrame(setDate);
 }
 
-requestAnimationFrame(updateClock);
+requestAnimationFrame(setDate);
