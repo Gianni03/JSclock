@@ -1,5 +1,5 @@
  html {
-   background: #018DED url(https://unsplash.it/1500/1000?image=881&blur=5);
+   background: #018DED url(https://unsplash.it/1500/1000?image=88&blur=5);
    background-size: cover;
    font-family: 'helvetica neue';
    text-align: center;
@@ -44,4 +44,56 @@
    background: black;
    position: absolute;
    top: 50%;
+   transform-origin: 100%; /* esto hace que el origen de la rotación sea el extremo derecho */
+   transform: rotate(90deg); /* 90 grados para que empiece apuntando hacia arriba */
+   transition: transform 0.05s; /* suaviza la rotación */
+   transition-timing-function: cubic-bezier(0.1, 2.7, 0.58, 1); /* simula el movimiento de un reloj real */
  }
+
+ .hand.second-hand{
+    height: 2px;
+    background: red;
+    box-shadow: 0 0 6px rgba(255, 0, 0, 0.5);
+    border-radius: 50%;
+ }
+
+  .hand.min-hand {
+    height: 4px;
+    background: black;
+  }
+
+  .hand.hour-hand {
+      width: 35%;
+      right: 50%;
+      background: black;
+  }
+
+.controls {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  display: flex;
+  gap: 0.5rem;
+  background: rgba(0, 0, 0, 0.4);
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  font-size: 1.2rem;
+}
+
+.controls label {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  user-select: none;
+}
+
+.controls input[type="checkbox"] {
+  width: 1rem;
+  height: 1rem;
+  accent-color: white;
+  cursor: pointer;
+}
+
